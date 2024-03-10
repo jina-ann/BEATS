@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BEATS - Sync Your Heartbeat</title>
+        <link rel="stylesheet" href="style.css"><style>
+         #game-container {
+          position: relative;
+          top: -754px;
+          width: 200px;
+          height: 50px;
+          position: relative;
+          border: 2px solid #333;
+          border-radius: 5px
+          background-color: #f5f5f5;
+          margin-bottom: 20px;
+          margin-left: 12px;
+        }
+
+        #target {
+          width: 30px;
+          height: 30px;
+          background-color: rgb(2, 0, 96);
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 50%;
+          cursor: pointer;
+          transition: transform 0.2s ease-in-out;
+        }
+        #target:hover {
+          transform: scale(1.2);
+        }
+        #score {
+          color: #ffffff;
+          font-size: 18px;
+          font-family: 'Varela Round', sans-serif;
+          margin-top: -844px;
+          text-align: left;
+          margin-left: 12px;
+       }
+     </style>
+        
+    </head>
+    <body>
+    <nav>
+      <ul>
+        <li class="brand"><img src="logo.png" alt="rajjn">BEATS</li>
+        <li>Home</li>
+        <li>About</li>
+        <li class="search-box">
+            <input type="text" id="userInput" placeholder="Request songs">
+            <button onclick="saveInput()">Save</button>
+            <button onclick="loadInput()">Load</button>
+        </li>
+          <div id="output"></div>
+      </ul>
+    </nav>
+
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.374/build/spline-viewer.js"></script>
+    <spline-viewer url="https://prod.spline.design/HJUWdFhQ1jsZwikW/scene.splinecode"></spline-viewer>
+
+    <div id="game-container">
+      <div id="target"></div>
+    </div>
+      <div id="score">Score: 0</div>
+      <script>
+        // Get references to HTML elements
+        const gameContainer = document.getElementById('game-container');
+        const target = document.getElementById('target');
+        const scoreElement = document.getElementById('score');
+    
+        // Game state variables
+        let score = 0;
+        let targetX;
+        let targetY;
+    
+        // Function to update target position
+        function updateTargetPosition() {
+          target.style.left = targetX + 'px';
+          target.style.top = targetY + 'px';
+        }
+    
+        // Function to handle target click
+        function handleTargetClick() {
+          score++;
+          scoreElement.textContent = 'Score: ' + score;
+    
+          // Move the target to a random position within the game container
+          targetX = Math.floor(Math.random() * (gameContainer.offsetWidth - target.offsetWidth));
+          targetY = Math.floor(Math.random() * (gameContainer.offsetHeight - target.offsetHeight));
+          updateTargetPosition();
+        }
+    
+        // Add event listener for target click
+        target.addEventListener('click', handleTargetClick);
+    
+        // Initial target position
+        targetX = Math.floor(Math.random() * (gameContainer.offsetWidth - target.offsetWidth));
+        targetY = Math.floor(Math.random() * (gameContainer.offsetHeight - target.offsetHeight));
+        updateTargetPosition();
+      </script>
+
+
+     <div class="container">
+        <div class="songList">
+          <h1>modern Symphonies</h1>
+            <div id="imageContainer">
+                <img id="image_shower" src="" alt="Random Image" onmouseover="get_random_image()">
+            </div>
+            
+            <div class="songItemContainer">
+              <div class="songItem">
+                    <img alt="1">
+                    <span class="songName">Let me Love You</span>
+                    <span class="songlistplay"><span class="timestamp">06:34 <i id="0" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <div class="lyrics"></div>
+              </div>
+              <div class="songItem">
+                    <img alt="1">
+                    <span class="songName">Let me Love You</span>
+                    <span class="songlistplay"><span class="timestamp">04:34 <i id="1" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <div class="lyrics"></div>
+              </div>
+              <div class="songItem">
+                    <img alt="1">
+                    <span class="songName">Let me Love You</span>
+                    <span class="songlistplay"><span class="timestamp">05:12 <i id="2" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <div class="lyrics"></div>
+              </div>
+              <div class="songItem">
+                    <img alt="1">
+                    <span class="songName">Let me Love You</span>
+                    <span class="songlistplay"><span class="timestamp">05:22 <i id="3" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <div class="lyrics"></div>
+              </div>
+              <div class="songItem">
+                    <img alt="1">
+                    <span class="songName">Let me Love You</span>
+                    <span class="songlistplay"><span class="timestamp">05:30 <i id="4" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <div class="lyrics"></div>
+              </div>
+              <div class="songItem">
+                    <img alt="1">
+                    <span class="songName">Let me Love You</span>
+                    <span class="songlistplay"><span class="timestamp">05:34 <i id="5" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <div class="lyrics"></div>
+              </div>
+              <div class="songItem">
+                    <img alt="1">
+                    <span class="songName">Let me Love You</span>
+                    <span class="songlistplay"><span class="timestamp">03:22 <i id="6" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <div class="lyrics"></div>
+              </div>
+              <div class="songItem">
+                    <img alt="1">
+                    <span class="songName">Let me Love You</span>
+                    <span class="songlistplay"><span class="timestamp">02:34 <i id="7" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <div class="lyrics"></div>
+              </div>
+              <div class="songItem">
+                    <img alt="1">
+                    <span class="songName">Let me Love You</span>
+                    <span class="songlistplay"><span class="timestamp">03:31 <i id="8" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <div class="lyrics"></div>
+              </div>
+              <div class="songItem">
+                    <img alt="1">
+                    <span class="songName">Let me Love You</span>
+                    <span class="songlistplay"><span class="timestamp">04:40 <i id="9" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <div class="lyrics"></div>
+              </div>
+            </div>
+        </div>
+      <div class="songBanner"></div>
+      </div>
+
+    
+      <div class="lyrics-container">
+        <div class="lyrics" id="lyrics"></div>
+      </div>
+      
+      <div class="bottom">
+        <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100">
+          <div class="icons">
+            <!-- fontawesome icons -->
+            <i class="fas fa-3x fa-step-backward" id="previous"></i>
+            <i class="far fa-3x fa-play-circle" id="masterPlay"></i>
+            <i class="fas fa-3x fa-step-forward" id="next"></i> 
+          </div>
+          <div class="songInfo">
+            <img src="playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName">Warriyo - Mortals [NCS Release]</span>
+          </div>
+      </div>
+    
+   
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
+    <script>
+        // JavaScript code
+        function saveInput() {
+          var input = document.getElementById("userInput").value;
+          var storedInputs = JSON.parse(localStorage.getItem("storedInputs")) || [];
+          storedInputs.push(input);
+          localStorage.setItem("storedInputs", JSON.stringify(storedInputs));
+          document.getElementById("output").innerText = "Input saved!";
+        }
+    
+        function loadInput() {
+          var storedInputs = JSON.parse(localStorage.getItem("storedInputs")) || [];
+          if (storedInputs.length > 0) {
+            var inputList = "";
+            for (var i = 0; i < storedInputs.length; i++) {
+              inputList += storedInputs[i] + "<br>";
+            }
+            document.getElementById("output").innerHTML = inputList;
+          } else {
+            document.getElementById("output").innerText = "No inputs stored.";
+          }
+        }
+    </script>
+       <style>
+          body {
+           margin: 0;
+           padding: 0;
+           position: relative;
+           }
+            
+          #imageContainer {
+            border: 10px solid black;
+            width: 250px;
+            height: 300px;
+            border: 10px solid black;
+            overflow: hidden;
+            position: absolute;
+            top: 2%;
+            right: -185px;
+            transform: translateY(-50%);
+            }
+             @media (max-width: 768px) {
+                #imageContainer {
+                display: none;
+                                }
+                }
+            
+          #image_shower {
+             width: 100%;
+             height: 100%;
+             object-fit: contain;
+             }
+        </style>
+        <script>
+          var image_array = [
+              '2.webp',
+              '3.webp',
+              '4.webp',   
+              '6.webp',
+              '7.webp',
+              '8.webp',
+              '9.webp',
+              '10.webp'
+                            ];
+                    
+          function get_random_image() {
+                          // Get a random index
+            var random_index = Math.floor(Math.random() * image_array.length);
+                      
+                          // Get an image at the random_index
+            var selected_image = image_array[random_index];
+                      
+                          // Display the image
+            document.getElementById('image_shower').src = `./images/${selected_image}`;
+          }
+       </script>
+</body>
+</html>

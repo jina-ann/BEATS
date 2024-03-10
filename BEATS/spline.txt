@@ -1,0 +1,13 @@
+3d nov:
+
+ <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.374/build/spline-viewer.js"></script>
+<spline-viewer url="https://prod.spline.design/KixsSnaaXTBw3dXI/scene.splinecode"></spline-viewer>
+
+
+
+
+
+
+
+<script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.374/build/spline-viewer.js"></script>
+<spline-viewer url="https://prod.spline.design/RroH-K43GpcBmTJP/scene.splinecode"></spline-viewer>
